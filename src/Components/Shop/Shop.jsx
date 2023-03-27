@@ -3,6 +3,13 @@ import Product from "../product/Product";
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
+    
+    // button handlers
+    const handleAddToCart = (product) => {
+      const newCart = [...cart, product];
+      setCart(newCart);
+  }
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json')
@@ -20,6 +27,7 @@ const Shop = () => {
             <Product 
             key={product.id}
             product={product}
+            handleAddToCart={handleAddToCart}
             >
 
             </Product>)
@@ -29,6 +37,7 @@ const Shop = () => {
       </div>
       <div className="col-span-1 text-center border w-25">
         <p>Cart Here</p>
+        <p>Selected Items: {cart.length}</p>
         
       </div>
     </div>
