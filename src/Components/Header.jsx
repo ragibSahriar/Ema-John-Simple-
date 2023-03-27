@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div class="">
             <div class="navbar bg-base-100 bg-slate-900">
-  <div class="flex-1 ">
+  <div class="flex-1 container mx-auto">
     <img class="w-36" src={logo} alt="" />
   </div>
   <div class="flex-none">
